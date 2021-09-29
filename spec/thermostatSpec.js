@@ -23,4 +23,10 @@ describe("Thermostat", function () {
     thermostat.up(50);
     expect(thermostat.getTemp()).toBe(25);
   });
+
+  it("Power Save Off, max 32", function () {
+    thermostat.togglePowerSave();
+    thermostat.up(50);
+    expect(thermostat.getTemp()).toBe(32);
+  });
 });
