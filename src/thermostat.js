@@ -31,6 +31,7 @@ class Thermostat {
 
   getUsage() {
     if (this.temperature < 18) return "low-usage";
+    if (this.temperature <= 25) return "medium-usage";
   }
 
   _isMinTemp(change) {
