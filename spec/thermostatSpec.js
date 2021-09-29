@@ -29,4 +29,14 @@ describe("Thermostat", function () {
     thermostat.up(50);
     expect(thermostat.getTemp()).toBe(32);
   });
+
+  it("resets to 20", function () {
+    thermostat.resetTemp();
+    expect(thermostat.getTemp()).toBe(20);
+  });
+
+  it("prints out for lower than 18", function () {
+    thermostat.down(10);
+    expect(thermostat.getUsage()).toBe("low-usage");
+  });
 });

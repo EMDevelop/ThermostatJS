@@ -1,6 +1,7 @@
 class Thermostat {
   constructor() {
-    this.temperature = 20;
+    this.DEFAULT_TEMPERATURE = 20;
+    this.temperature = this.DEFAULT_TEMPERATURE;
     this.POWER_SAVE = true;
     this.MIN_TEMPERATURE = 10;
     this.MAX_TEMPERATURE = 25;
@@ -22,6 +23,14 @@ class Thermostat {
   togglePowerSave() {
     this.POWER_SAVE = !this.POWER_SAVE;
     this.POWER_SAVE ? (this.MAX_TEMPERATURE = 25) : (this.MAX_TEMPERATURE = 32);
+  }
+
+  resetTemp() {
+    this.temperature = this.DEFAULT_TEMPERATURE = 20;
+  }
+
+  getUsage() {
+    if (this.temperature < 18) return "low-usage";
   }
 
   _isMinTemp(change) {
