@@ -43,4 +43,10 @@ describe("Thermostat", function () {
   it("prints out for lower than 18", function () {
     expect(thermostat.getUsage()).toBe("medium-usage");
   });
+
+  it("prints out for lower than 18", function () {
+    thermostat.togglePowerSave();
+    thermostat.up(50);
+    expect(thermostat.getUsage()).toBe("high-usage");
+  });
 });
