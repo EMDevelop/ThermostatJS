@@ -37,7 +37,7 @@ class Thermostat {
   }
 
   getPowerSavingMode() {
-    return (this.POWER_SAVE = true ? "on" : "off");
+    return this.POWER_SAVE === true ? "on" : "off";
   }
 
   _isMinTemp(change) {

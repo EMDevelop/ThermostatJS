@@ -53,4 +53,9 @@ describe("Thermostat", function () {
   it("prints out for on if power save mode is on", function () {
     expect(thermostat.getPowerSavingMode()).toBe("on");
   });
+
+  it("prints out for on if power save mode is on", function () {
+    thermostat.togglePowerSave();
+    expect(thermostat.getPowerSavingMode()).toBe("off");
+  });
 });
