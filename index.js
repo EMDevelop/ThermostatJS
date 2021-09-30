@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const thermostat = new Thermostat();
 
-  const updateTemp = () =>
-    (document.querySelector("#temperature").innerText = thermostat.temperature);
+  const updateTemp = () => {
+    document.querySelector("#temperature").innerText = thermostat.temperature;
+    document.querySelector("#temperature").className = thermostat.getUsage();
+  };
 
   updateTemp();
 
@@ -23,5 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector("#toggle-psm").addEventListener("click", () => {
     thermostat.togglePowerSave();
+    document.querySelector("#power-saving-status").innerText =
+      thermostat.getPowerSavingMode();
   });
 });
