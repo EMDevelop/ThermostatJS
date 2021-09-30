@@ -36,6 +36,10 @@ class Thermostat {
     return "high-usage";
   }
 
+  getPowerSavingMode() {
+    return (this.POWER_SAVE = true ? "on" : "off");
+  }
+
   _isMinTemp(change) {
     return change < this.MIN_TEMPERATURE;
   }

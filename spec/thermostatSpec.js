@@ -49,4 +49,8 @@ describe("Thermostat", function () {
     thermostat.up(50);
     expect(thermostat.getUsage()).toBe("high-usage");
   });
+
+  it("prints out for on if power save mode is on", function () {
+    expect(thermostat.getPowerSavingMode()).toBe("on");
+  });
 });
