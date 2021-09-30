@@ -10,7 +10,8 @@ class Thermostat {
     return this.temperature;
   }
   up(change) {
-    this._isMaxTemp(this.temperature - change)
+    console.log(change);
+    this._isMaxTemp(this.temperature + change)
       ? (this.temperature = this.MAX_TEMPERATURE)
       : (this.temperature += change);
   }
@@ -40,6 +41,6 @@ class Thermostat {
   }
 
   _isMaxTemp(change) {
-    return change < this.MAX_TEMPERATURE;
+    return change > this.MAX_TEMPERATURE;
   }
 }
